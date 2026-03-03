@@ -299,6 +299,17 @@
       display:none;
     }
     .to-top.show{display:inline-flex}
+    @media (max-width: 768px) {
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+
+}
   </style>
 </head>
 
@@ -316,8 +327,8 @@
 
         <div class="contact-right">
           <a class="mini-btn ghost" id="mapBtn" href="#" target="_blank" rel="noopener">🧭 Open Map</a>
-          <a class="mini-btn" id="callBtn" href="#">📞 Call</a>
-          <a class="mini-btn" id="textBtn" href="#">💬 Text</a>
+          <a class="mini-btn" id="callBtn" href="tel:+1330238883">📞 Call</a>
+          <a class="mini-btn" id="textBtn" href="tel:+1330238883">💬 Text</a>
         </div>
       </div>
     </div>
@@ -371,10 +382,8 @@
     </div>
 
 </div>
-          <a class="btn ghost" href="#how">How it works</a>
-        </div>
+      
 
-        <div class="note">Pro tip: Bookmark this page — repeat orders take 60 seconds.</div>
       </div>
     </div>
   </header>
