@@ -99,16 +99,25 @@
     .nav .cta:hover{text-decoration:none;filter:brightness(1.03)}
 
     /* HERO - FULL SCREEN AGAIN */
-    .hero{
-      position:relative;
-      min-height: calc(100vh - 120px); /* full-ish screen minus top bars */
-      display:flex;align-items:center;
-      background:
-        radial-gradient(900px 400px at 15% 25%, rgba(47,109,246,.28), rgba(47,109,246,0) 65%),
-        linear-gradient(90deg, rgba(7,16,34,.94) 0%, rgba(7,16,34,.78) 55%, rgba(7,16,34,.40) 100%),
-        url('header.jpg');
-      background-size: cover;
-      background-position: center;
+   .hero{
+position:relative;
+min-height:78vh;
+display:flex;
+align-items:center;
+background:
+radial-gradient(900px 400px at 18% 30%, rgba(47,109,246,.28), rgba(47,109,246,0) 65%),
+linear-gradient(90deg, rgba(7,16,34,.92) 0%, rgba(7,16,34,.70) 55%, rgba(7,16,34,.20) 100%),
+url('header.jpg');
+background-size:cover;
+background-position:right center;
+}
+
+.hero .content{
+padding:56px 0 46px 0;
+width:100%;
+max-width:640px;
+margin-right:auto;
+}
     }
     .hero .content{padding: 72px 0 62px 0;width:100%}
     .pill{
