@@ -2,445 +2,451 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sky Plaza Laundromat — Wash & Fold Locker Drop-Off</title>
-  <meta name="description" content="Secure 24/7 locker drop-off wash & fold in Garrettsville, Ohio. $1.50/lb, $25 minimum. Text updates. Fast turnaround." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sky Plaza Laundromat | Wash & Fold Locker Drop-Off</title>
+  <meta name="description" content="Secure 24/7 locker drop-off wash & fold in Garrettsville, Ohio. $1.50/lb • $25 minimum • Text updates • Fast turnaround." />
 
   <style>
     :root{
-      --bg0:#070f1f;
-      --bg1:#0b1733;
-      --card:#0f234a;
-      --card2:#0d1f41;
-      --line:rgba(255,255,255,.10);
-      --text:rgba(235,245,255,.95);
-      --muted:rgba(235,245,255,.72);
-      --brand:#4a86ff;
-      --brand2:#2cc58a;
-      --brand3:#2aa6c7;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1120px;
+      --bg0:#071022;
+      --bg1:#0b1220;
+      --card:rgba(15,26,51,.72);
+      --muted:rgba(234,240,255,.72);
+      --text:#eaf0ff;
+      --brand:#2f6df6;
+      --brand2:#4aa3ff;
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1080px;
     }
-
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg0),var(--bg1));color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg0);color:var(--text)}
+    a{color:inherit}
+    html{scroll-behavior:smooth}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* Top contact strip */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      background:rgba(10,20,45,.88);
-      backdrop-filter: blur(10px);
-      /* removed border per your request */
-      border-bottom:none;
+    /* TOP STRIP (no border like you wanted) */
+    .contact-strip{
+      background: rgba(255,255,255,.06);
+      border-bottom: none;
     }
-    .topbar-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;padding:10px 0;
-      flex-wrap:wrap;
+    .contact-strip .inner{
+      display:flex;gap:12px;align-items:center;justify-content:space-between;
+      padding:10px 0;flex-wrap:wrap;
+      color: rgba(234,240,255,.86);
+      font-weight:650;
+      font-size: 13px;
     }
-    .brandline{display:flex;align-items:center;gap:10px;font-weight:700}
-    .dot{width:8px;height:8px;border-radius:999px;background:var(--brand)}
-    .pills{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .pill{
-      font-size:13px;color:var(--muted);
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
+    .contact-left{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .contact-right{display:flex;gap:10px;flex-wrap:wrap}
+    .tag{
+      display:inline-flex;gap:8px;align-items:center;
       padding:7px 10px;border-radius:999px;
-      white-space:nowrap;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
     }
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
     .mini-btn{
-      font-size:13px;font-weight:700;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;
+      padding:9px 11px;border-radius:12px;
+      text-decoration:none;
+      background: rgba(47,109,246,.14);
+      border:1px solid rgba(47,109,246,.28);
+      font-weight:800;
     }
-    .mini-btn.primary{background:rgba(74,134,255,.20);border-color:rgba(74,134,255,.35)}
-    .mini-btn.good{background:rgba(44,197,138,.18);border-color:rgba(44,197,138,.35)}
-    .mini-btn.info{background:rgba(42,166,199,.18);border-color:rgba(42,166,199,.35)}
+    .mini-btn:hover{background: rgba(47,109,246,.22)}
+    .mini-btn.ghost{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .mini-btn.ghost:hover{background: rgba(255,255,255,.10)}
 
-    /* Nav */
-    .nav{
+    /* Sticky nav */
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter: blur(12px);
+      background: rgba(7,16,34,.62);
+      border-bottom: none;  /* removed border */
+    }
+    .topbar .inner{
       display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0 6px 0;
+      gap:14px;padding:12px 0;
     }
-    .navlinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .navlinks a{font-size:14px;color:var(--muted)}
-    .navlinks a:hover{color:var(--text)}
-    .cta{
-      padding:10px 14px;border-radius:999px;
-      font-weight:800;font-size:14px;
-      background:rgba(74,134,255,.92);
-      box-shadow:var(--shadow);
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.2px;
     }
+    .dot{
+      width:11px;height:11px;border-radius:999px;
+      background: linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow: 0 0 0 4px rgba(47,109,246,.18);
+    }
+    .nav{
+      display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+      color: rgba(234,240,255,.86);
+      font-weight:700;
+    }
+    .nav a{opacity:.85;text-decoration:none}
+    .nav a:hover{opacity:1;text-decoration:underline}
+    .nav .cta{
+      padding:10px 12px;border-radius:12px;text-decoration:none;
+      background: linear-gradient(135deg,var(--brand),var(--brand2));
+      border:1px solid rgba(80,170,255,.25);
+      box-shadow: 0 12px 28px rgba(47,109,246,.22);
+      opacity:1;
+    }
+    .nav .cta:hover{text-decoration:none;filter:brightness(1.03)}
 
-    /* Hero */
+    /* HERO - FULL SCREEN AGAIN */
     .hero{
-      margin-top:8px;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
+      position:relative;
+      min-height: calc(100vh - 120px); /* full-ish screen minus top bars */
+      display:flex;align-items:center;
       background:
-        linear-gradient(90deg, rgba(7,15,31,.92) 0%, rgba(7,15,31,.55) 55%, rgba(7,15,31,.25) 100%),
-        url("header.jpg") center/cover no-repeat;
+        radial-gradient(900px 400px at 15% 25%, rgba(47,109,246,.28), rgba(47,109,246,0) 65%),
+        linear-gradient(90deg, rgba(7,16,34,.94) 0%, rgba(7,16,34,.78) 55%, rgba(7,16,34,.40) 100%),
+        url('header.jpg');
+      background-size: cover;
+      background-position: center;
     }
-    .hero-inner{
-      padding:34px 28px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:center;
-      min-height:380px;
-    }
-    .badge{
-      display:inline-flex;gap:8px;align-items:center;
-      font-size:13px;color:var(--muted);
-      background:rgba(255,255,255,.07);
-      border:1px solid var(--line);
+    .hero .content{padding: 72px 0 62px 0;width:100%}
+    .pill{
+      display:inline-flex;gap:10px;align-items:center;
       padding:8px 12px;border-radius:999px;
-      margin-bottom:16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(234,240,255,.92);
+      font-weight:800;font-size:13px;
     }
-    .h1{font-size:54px;line-height:1.0;margin:0 0 12px 0;letter-spacing:-.02em}
-    .sub{margin:0 0 18px 0;color:var(--muted);max-width:54ch}
-    .trust{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px 0}
-    .chip{
-      font-size:13px;color:var(--muted);
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      padding:7px 10px;border-radius:999px;
-      display:inline-flex;gap:8px;align-items:center;
+    .h1{
+      margin:14px 0 10px 0;
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -1px;
+      font-weight: 950;
+      text-shadow: 0 2px 14px rgba(0,0,0,.35);
     }
-    .chip:before{content:"✓";color:rgba(44,197,138,.95);font-weight:900}
-
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .sub{
+      margin:0 0 18px 0;
+      max-width: 64ch;
+      color: rgba(234,240,255,.86);
+      font-size: 17px;
+      line-height: 1.6;
+      text-shadow: 0 2px 14px rgba(0,0,0,.30);
+    }
+    .trust{
+      display:flex;gap:12px;flex-wrap:wrap;
+      margin: 12px 0 22px 0;
+      color: rgba(234,240,255,.74);
+      font-weight:750;
+      font-size: 14px;
+    }
+    .trust span{
+      padding:8px 10px;border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       gap:10px;
-      padding:12px 14px;border-radius:14px;
-      font-weight:900;font-size:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      min-width:160px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      text-decoration:none;
+      font-weight: 900;
     }
-    .btn.primary{background:rgba(74,134,255,.92);border-color:rgba(74,134,255,.35)}
-    .btn.good{background:rgba(44,197,138,.90);border-color:rgba(44,197,138,.35)}
-    .btn.info{background:rgba(42,166,199,.90);border-color:rgba(42,166,199,.35)}
-    .note{margin-top:10px;color:rgba(235,245,255,.60);font-size:13px}
+    .btn.primary{
+      background: linear-gradient(135deg,var(--brand),var(--brand2));
+      border: 1px solid rgba(80,170,255,.25);
+      box-shadow: 0 12px 28px rgba(47,109,246,.24);
+    }
+    .btn.primary:hover{filter:brightness(1.03)}
+    .btn.ghost{background: rgba(255,255,255,.06)}
+    .btn.ghost:hover{background: rgba(255,255,255,.10)}
 
     /* Sections */
-    section{padding:44px 0}
-    .section-title{margin:0 0 8px 0;font-size:28px;letter-spacing:-.01em}
-    .section-sub{margin:0 0 18px 0;color:var(--muted)}
+    section{padding: 56px 0}
+    .section-title{
+      margin:0 0 10px 0;
+      font-size: 26px;
+      letter-spacing:-.3px;
+      font-weight: 950;
+      text-align:center;
+    }
+    .section-sub{
+      margin:0 auto 26px auto;
+      max-width: 78ch;
+      text-align:center;
+      color: rgba(234,240,255,.74);
+      line-height:1.6;
+    }
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    /* Cards */
+    .grid{display:grid;grid-template-columns: repeat(12, 1fr);gap: 14px;}
     .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:0 8px 22px rgba(0,0,0,.20);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
     }
-    .stepnum{
-      width:30px;height:30px;border-radius:10px;
-      display:inline-flex;align-items:center;justify-content:center;
-      font-weight:900;font-size:14px;
-      background:rgba(74,134,255,.18);
-      border:1px solid rgba(74,134,255,.30);
-      margin-bottom:10px;
+    .card h3{margin:0 0 8px 0;font-size:18px;font-weight:950}
+    .card p{margin:0;color: rgba(234,240,255,.76);line-height:1.6}
+    .icon{
+      width:38px;height:38px;border-radius:14px;
+      display:grid;place-items:center;
+      background: rgba(47,109,246,.18);
+      border: 1px solid rgba(47,109,246,.32);
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 950;
     }
-    .card h3{margin:6px 0 6px 0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
 
-    /* Order form (simple + works now via text) */
-    .formwrap{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      align-items:start;
-    }
-    .formcard{padding:18px}
-    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
-    input, textarea, select{
+    /* How it works */
+    .how .card{grid-column: span 4}
+    @media (max-width: 920px){ .how .card{grid-column: span 6} }
+    @media (max-width: 620px){ .how .card{grid-column: span 12} }
+
+    /* Form */
+    .formwrap{display:grid;grid-template-columns: 1.1fr .9fr; gap:14px; align-items:start;}
+    .formwrap iframe{
       width:100%;
-      background:rgba(0,0,0,.20);
-      border:1px solid var(--line);
-      border-radius:12px;
-      color:var(--text);
-      padding:12px 12px;
-      font-size:14px;
-      outline:none;
+      height: 980px;
+      border:0;
+      border-radius: 14px;
+      background: white;
     }
-    textarea{min-height:110px;resize:vertical}
-    .submitrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .smallhelp{color:rgba(235,245,255,.60);font-size:13px;margin-top:10px}
+    @media (max-width: 980px){ .formwrap{grid-template-columns: 1fr} }
 
     /* Photos */
-    .photogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .photo{
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-    }
-    .caption{padding:10px 12px;color:var(--muted);font-size:13px}
-
-    /* Map */
-    .mapcard iframe{width:100%;height:340px;border:0;border-radius:16px}
+    .gallery .photo{grid-column: span 4; padding:0; overflow:hidden}
+    .gallery img{width:100%;height:240px;object-fit:cover;display:block}
+    .gallery .caption{padding:12px 14px;color:rgba(234,240,255,.78);font-weight:750}
+    @media (max-width: 920px){ .gallery .photo{grid-column: span 6} }
+    @media (max-width: 620px){ .gallery .photo{grid-column: span 12} .gallery img{height:220px} }
 
     /* Footer */
-    footer{padding:30px 0;color:rgba(235,245,255,.55);font-size:13px;border-top:1px solid var(--line);margin-top:30px}
+    footer{border-top: 1px solid rgba(255,255,255,.10);padding: 24px 0 40px 0;color: rgba(234,240,255,.70);}
+    .small{font-size:13px;line-height:1.6}
 
-    /* Mobile fixes */
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr;min-height:auto;padding:26px 18px}
-      .h1{font-size:42px}
-      .grid{grid-template-columns:1fr}
-      .formwrap{grid-template-columns:1fr}
-      .photogrid{grid-template-columns:1fr}
-      .btn{min-width:0;width:100%}
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
       .btnrow{flex-direction:column;align-items:stretch}
-      .actions{width:100%}
-      .topbar-inner{gap:10px}
+      .btn{width:100%}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Top contact strip -->
-  <div class="topbar">
-    <div class="wrap topbar-inner">
-      <div class="brandline">
-        <span class="dot"></span> Sky Plaza Laundromat
-      </div>
-
-      <div class="pills">
-        <span class="pill">Garrettsville, OH</span>
-        <span class="pill">Daily (get your hours)</span>
-        <span class="pill">24/7 locker drop-off</span>
-      </div>
-
-      <div class="actions">
-        <a class="mini-btn primary" href="#find">Open Map</a>
-        <a class="mini-btn good" href="tel:+13302388883">Call</a>
-        <a class="mini-btn info" href="sms:+13302388883">Text</a>
+  <!-- Top strip -->
+  <div class="contact-strip">
+    <div class="wrap">
+      <div class="inner">
+        <div class="contact-left">
+          <span class="tag">📍 Garrettsville, Ohio</span>
+          <span class="tag">🔒 24/7 locker drop-off</span>
+          <span class="tag">💲 $1.50/lb • $25 min</span>
+        </div>
+        <div class="contact-right">
+          <a class="mini-btn ghost" href="#find">🧭 Open Map</a>
+          <a class="mini-btn" href="tel:+13302388883">📞 Call</a>
+          <a class="mini-btn" href="sms:+13302388883">💬 Text</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="wrap">
-    <!-- Nav -->
-    <div class="nav">
-      <div class="navlinks">
-        <a href="#how">How it works</a>
-        <a href="#order">Start your order</a>
-        <a href="#photos">Photos</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#find">Find us</a>
+  <!-- Nav -->
+  <div class="topbar" id="top">
+    <div class="wrap">
+      <div class="inner">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>Sky Plaza Laundromat</span>
+        </div>
+        <nav class="nav">
+          <a href="#how">How it works</a>
+          <a href="#order">Start order</a>
+          <a href="#gallery">Photos</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#find">Find us</a>
+          <a href="#order" class="cta">Start order</a>
+        </nav>
       </div>
-      <a class="cta" href="#order">Start order</a>
     </div>
+  </div>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="badge">🧺 Wash & Fold • Locker Drop-Off • $1.50/lb • $25 minimum</div>
-          <h1 class="h1">Laundry Done.<br/>Zero Stress.</h1>
-          <p class="sub">
-            Drop your bag in our secure lockers, fill out the order form, and we’ll wash, dry, and neatly fold your order.
-            We’ll text updates and pickup info when it’s ready.
-          </p>
+  <!-- HERO full screen -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="content">
+        <div class="pill">🧺 Wash &amp; Fold • Locker Drop-Off • $1.50/lb • $25 minimum</div>
+        <h1 class="h1">Laundry Done.<br/>Zero Stress.</h1>
+        <p class="sub">
+          Drop your bag in our secure lockers, complete the form, and we’ll wash, dry, and neatly fold your order.
+          We’ll text you updates and pickup info when it’s ready.
+        </p>
 
-          <div class="trust">
-            <span class="chip">Secure lockers</span>
-            <span class="chip">Text updates</span>
-            <span class="chip">Neat folding</span>
-            <span class="chip">Fast turnaround</span>
-          </div>
-
-          <div class="btnrow">
-            <a class="btn primary" href="#order">Start Wash &amp; Fold Order</a>
-            <a class="btn good" href="tel:+13302388883">Call 330-238-8883</a>
-            <a class="btn info" href="sms:+13302388883">Text Us</a>
-          </div>
-
-          <div class="note">Pro tip: Save this page to your home screen so ordering takes 20 seconds next time.</div>
+        <div class="trust">
+          <span>✅ Secure lockers</span>
+          <span>✅ Text updates</span>
+          <span>✅ Neat folding</span>
+          <span>✅ Fast turnaround</span>
         </div>
 
-        <div></div>
+        <div class="btnrow">
+          <a class="btn primary" href="#order">Start Wash &amp; Fold Order</a>
+          <a class="btn ghost" href="tel:+13302388883">Call 330-238-8883</a>
+          <a class="btn ghost" href="sms:+13302388883">Text Us</a>
+        </div>
       </div>
     </div>
+  </header>
 
-    <!-- How it works -->
-    <section id="how">
+  <!-- How it works -->
+  <section id="how" class="how">
+    <div class="wrap">
       <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Three steps. No calls. No confusion.</p>
+      <p class="section-sub">Three steps. No confusion.</p>
 
       <div class="grid">
         <div class="card">
-          <div class="stepnum">1</div>
-          <h3>Fill out the order form</h3>
-          <p>Enter your name, phone number, locker number, and any special instructions.</p>
+          <div class="icon">1</div>
+          <h3>Fill out the form</h3>
+          <p>Enter your contact info, locker number, and any special instructions.</p>
         </div>
         <div class="card">
-          <div class="stepnum">2</div>
-          <h3>Drop your laundry in the locker</h3>
-          <p>Place your bag in the secure locker system. Use the same locker number you typed in.</p>
+          <div class="icon">2</div>
+          <h3>Drop your bag in a locker</h3>
+          <p>Use the same locker number you typed in the form.</p>
         </div>
         <div class="card">
-          <div class="stepnum">3</div>
+          <div class="icon">3</div>
           <h3>We wash, dry &amp; fold</h3>
-          <p>We’ll text you updates and pickup instructions when everything’s ready.</p>
+          <p>We’ll text you pickup instructions when your order is ready.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Order form (moved near top) -->
-    <section id="order">
+  <!-- ORDER (moved up, right after How it works) -->
+  <section id="order">
+    <div class="wrap">
       <h2 class="section-title">Start your order</h2>
-      <p class="section-sub">This form is intentionally right here near the top so mobile users don’t have to scroll forever.</p>
+      <p class="section-sub">Fill this out, then drop your laundry in a locker.</p>
 
-      <div class="card formcard">
-        <div class="formwrap">
-          <form id="orderForm">
-            <label for="name">Name</label>
-            <input id="name" name="name" required placeholder="Your name" />
+      <div class="formwrap">
+        <div class="card">
+          <iframe
+            title="Wash, Dry, Fold Locker Check-in"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdh-b12ZRGDx2HVAUbYEsmUxLibouY4t0JjTSokc7BRieKv0w/viewform?embedded=true">
+          </iframe>
+        </div>
 
-            <label for="phone">Phone number</label>
-            <input id="phone" name="phone" required placeholder="###-###-####" />
+        <div class="card">
+          <h3>Before you drop off</h3>
+          <p>Quick checklist so your order goes smoothly:</p>
+          <ul style="color:rgba(234,240,255,.76);line-height:1.75;margin:10px 0 0 18px">
+            <li>Check pockets (keys, pens, coins).</li>
+            <li>Remove valuables and anything non-washable.</li>
+            <li>Separate items that can’t be tumble-dried.</li>
+            <li>Add detergent preferences in the form (fragrance-free, no softener, etc.).</li>
+          </ul>
 
-            <label for="locker">Locker number</label>
-            <input id="locker" name="locker" required placeholder="Example: 3" />
+          <div style="height:14px"></div>
 
-            <label for="notes">Notes / preferences</label>
-            <textarea id="notes" name="notes" placeholder="Detergent preference, allergies, dryer sheet yes/no, anything we should know."></textarea>
+          <h3>Need help?</h3>
+          <p style="color:rgba(234,240,255,.76);line-height:1.6;margin:8px 0 0 0;">
+            Call or text: <b>330-238-8883</b>
+          </p>
 
-            <div class="submitrow">
-              <button class="btn primary" type="submit">Submit order</button>
-              <a class="btn info" href="sms:+13302388883">Or just Text Us</a>
-            </div>
+          <div style="height:14px"></div>
 
-            <div class="smallhelp">
-              For now, “Submit order” opens a prefilled text message to us (so it works immediately).
-              When your Google Form is finished, we can swap this to your real form link.
-            </div>
-          </form>
-
-          <div>
-            <div class="card" style="background:rgba(255,255,255,.03)">
-              <h3 style="margin:0 0 10px 0">Pricing</h3>
-              <p style="margin:0;color:var(--muted);line-height:1.55">
-                <b>$1.50 per pound</b><br/>
-                <b>$25 minimum</b><br/><br/>
-                We’ll confirm the total by text when we receive your bag.
-              </p>
-            </div>
-
-            <div style="height:12px"></div>
-
-            <div class="card" style="background:rgba(255,255,255,.03)">
-              <h3 style="margin:0 0 10px 0">Pickup</h3>
-              <p style="margin:0;color:var(--muted);line-height:1.55">
-                We’ll text pickup instructions when your order is ready.
-              </p>
-            </div>
-          </div>
+          <h3>Pricing</h3>
+          <p style="color:rgba(234,240,255,.76);line-height:1.6;margin:8px 0 0 0;">
+            <b>$1.50 / lb</b><br/>
+            <b>$25 minimum order</b>
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Photos -->
-    <section id="photos">
+  <!-- Photos -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
       <h2 class="section-title">Our facility</h2>
-      <p class="section-sub">Real photos build trust. These are pulled from the files in your repo.</p>
+      <p class="section-sub">Real photos build trust.</p>
 
-      <div class="photogrid">
-        <div class="photo">
-          <img src="facility-1.jpg" alt="Sky Plaza Laundromat interior photo 1" />
-          <div class="caption">Clean, bright, easy drop-off</div>
+      <div class="grid">
+        <div class="card photo">
+          <img src="facility-1.jpg" alt="Sky Plaza Laundromat interior photo 1">
+          <div class="caption">Clean, bright, and easy to use</div>
         </div>
-        <div class="photo">
-          <img src="facility-2.jpg" alt="Sky Plaza Laundromat interior photo 2" />
-          <div class="caption">Secure lockers + quick process</div>
+        <div class="card photo">
+          <img src="facility-2.jpg" alt="Sky Plaza Laundromat interior photo 2">
+          <div class="caption">Secure locker drop-off system</div>
         </div>
-        <div class="photo">
-          <img src="facility-3.jpg" alt="Sky Plaza Laundromat interior photo 3" />
-          <div class="caption">Fast turnaround, neat fold</div>
+        <div class="card photo">
+          <img src="facility-3.jpg" alt="Sky Plaza Laundromat interior photo 3">
+          <div class="caption">Fast, tidy wash &amp; fold results</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Reviews -->
-    <section id="reviews">
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="wrap">
       <h2 class="section-title">Customer reviews</h2>
-      <p class="section-sub">Want the real reviews? Use the buttons below.</p>
+      <p class="section-sub">See what customers are saying about Sky Plaza Laundromat.</p>
 
-      <div class="btnrow">
+      <div style="text-align:center">
         <a class="btn primary" target="_blank" rel="noopener"
            href="https://www.google.com/search?q=Sky+Plaza+Laundromat+Garrettsville+Ohio+reviews">
           Read Reviews
         </a>
-        <a class="btn good" target="_blank" rel="noopener"
+        <a class="btn ghost" target="_blank" rel="noopener"
            href="https://g.page/r/CaebglaDbS5TEAI/review">
           Leave a Review
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Map -->
-    <section id="find">
+  <!-- Map -->
+  <section id="find">
+    <div class="wrap">
       <h2 class="section-title">Find us</h2>
       <p class="section-sub">Sky Plaza Laundromat • Garrettsville, Ohio</p>
 
-      <div class="card mapcard">
+      <div class="card">
         <iframe
           src="https://www.google.com/maps?q=Sky+Plaza+Laundromat+Garrettsville+Ohio&output=embed"
+          width="100%"
+          height="350"
+          style="border:0; border-radius:14px;"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen
           title="Google Map - Sky Plaza Laundromat">
         </iframe>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      © <span id="yr"></span> Sky Plaza Laundromat • Questions? Call/Text 330-238-8883
-    </footer>
-  </div>
+  <footer>
+    <div class="wrap">
+      <div class="small">
+        © <span id="y"></span> Sky Plaza Laundromat • Call/Text: 330-238-8883
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Footer year
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    // Simple "works right now" form:
-    // On submit, it opens a prefilled text message to your business number.
-    document.getElementById("orderForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const locker = document.getElementById("locker").value.trim();
-      const notes = document.getElementById("notes").value.trim();
-
-      const msg =
-        `Wash & Fold Locker Order%0A` +
-        `Name: ${encodeURIComponent(name)}%0A` +
-        `Customer Phone: ${encodeURIComponent(phone)}%0A` +
-        `Locker #: ${encodeURIComponent(locker)}%0A` +
-        `Notes: ${encodeURIComponent(notes || "None")}`;
-
-      // iPhone likes sms:+1...&body= ; Android often likes sms:+1...?body=
-      const number = "+13302388883";
-      const smsLink = `sms:${number}?&body=${msg}`;
-
-      window.location.href = smsLink;
-    });
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
