@@ -98,41 +98,22 @@
     }
     .nav .cta:hover{text-decoration:none;filter:brightness(1.03)}
 
-    /* HERO - FULL SCREEN AGAIN */
-.hero{
+   .hero{
 position:relative;
-min-height:35vh;
+min-height:40vh;
 display:flex;
 align-items:center;
-background:
-radial-gradient(...),
-linear-gradient(...),
-url('header.jpg');
+background-image:url('header.jpg');
 background-size:cover;
-background-position:right center;
-}
-
-.hero:before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
-90deg,
-rgba(7,16,34,.85) 0%,
-rgba(7,16,34,.55) 45%,
-rgba(7,16,34,0) 72%
-);
-pointer-events:none;
-z-index:0;
+background-position:center;
+background-repeat:no-repeat;
 }
 
 .hero .content{
 position:relative;
 z-index:1;
-padding:40px 0;
 max-width:600px;
-margin-left:0;
-margin-right:auto;
+margin-left:40px;
 text-align:left;
 }
     .hero .wrap{
