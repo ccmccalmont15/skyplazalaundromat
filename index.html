@@ -98,9 +98,9 @@
     }
     .nav .cta:hover{text-decoration:none;filter:brightness(1.03)}
 
-   .hero{
+.hero{
 position:relative;
-min-height:40vh;
+min-height:25vh;
 display:flex;
 align-items:center;
 background-image:url('header.jpg');
@@ -109,35 +109,32 @@ background-position:center;
 background-repeat:no-repeat;
 }
 
+/* dark overlay so text is readable */
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+}
+
+/* text container */
 .hero .content{
 position:relative;
-z-index:1;
+z-index:2;
 max-width:600px;
-margin-left:40px;
-text-align:left;
-}
-    .hero .wrap{
-margin-left:40px;
+margin-left:24px;
 margin-right:auto;
+text-align:left;
+padding:30px 0;
 }
-    }
-    .hero .content{padding: 72px 0 62px 0;width:100%}
-    .pill{
-      display:inline-flex;gap:10px;align-items:center;
-      padding:8px 12px;border-radius:999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      color: rgba(234,240,255,.92);
-      font-weight:800;font-size:13px;
-    }
-    .h1{
-      margin:14px 0 10px 0;
-      font-size: clamp(34px, 4.4vw, 58px);
-      line-height: 1.02;
-      letter-spacing: -1px;
-      font-weight: 950;
-      text-shadow: 0 2px 14px rgba(0,0,0,.35);
-    }
+
+/* headline readability */
+.h1{
+text-shadow:0 3px 12px rgba(0,0,0,0.8);
+}
     .sub{
       margin:0 0 18px 0;
       max-width: 64ch;
