@@ -11,294 +11,195 @@
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
 .wrap{max-width:var(--max);margin:auto;padding:0 var(--pad)}
 
-.topbar{position:sticky;top:0;background:white;border-bottom:1px solid var(--line)}
-.inner{display:flex;justify-content:space-between;align-items:center;padding:10px}
-.brand{font-weight:800}
+.topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.topbar .inner{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px var(--pad);max-width:var(--max);margin:0 auto}
+.brand{font-weight:800;line-height:1.1}
 .addr{font-size:13px;color:var(--muted)}
-
-.actions{display:flex;gap:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .btn{
-padding:10px 12px;
-border-radius:10px;
-border:1px solid var(--line);
-text-decoration:none;
-font-weight:700;
-color:var(--text)
+display:inline-flex;align-items:center;justify-content:center;
+padding:10px 12px;border-radius:10px;border:1px solid var(--line);
+text-decoration:none;font-weight:700;font-size:14px;color:var(--text);background:#fff
 }
+.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-.btn.primary{
-background:var(--blue);
-color:white;
-border-color:var(--blue)
-}
-
-.hero{
-margin-top:12px;
-border:1px solid var(--line);
-border-radius:16px;
-overflow:hidden
-}
-
+.hero{margin-top:12px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
 .hero img{
 width:100%;
 height:360px;
-object-fit:cover
+object-fit:cover;
+object-position:center;
+display:block;
 }
-
 .hero .body{padding:18px}
 
-h1{
-font-size:44px;
-margin:0
-}
+/* CHANGE #1: BIGGER "Sky Plaza Laundromat" */
+h1{margin:0;font-size:44px;letter-spacing:-0.02em;line-height:1.05}
 
-.sub{
-font-size:18px;
-color:var(--muted)
-}
-
-.section{
-padding:26px 0;
-border-bottom:1px solid var(--line)
-}
-
-.grid{
-display:grid;
-gap:16px
-}
-
-.card{
-border:1px solid var(--line);
-border-radius:16px;
-overflow:hidden
-}
-
-.card img{
-width:100%;
-height:260px;
-object-fit:cover
-}
-
+.sub{margin:8px 0 0;font-size:18px;color:var(--muted)}
+.pill{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.section{padding:26px 0;border-bottom:1px solid var(--line)}
+.title{margin:0 0 10px;font-size:22px}
+.grid{display:grid;gap:16px;grid-template-columns:1fr;align-items:start}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.card img{width:100%;height:260px;object-fit:cover;display:block}
 .card .body{padding:14px}
-
-.amenities{
-display:grid;
-gap:16px
-}
-
-.strip{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px
-}
-
-.strip img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:12px
-}
+.h{margin:0;font-size:18px}
+.p{margin:8px 0 0;color:var(--muted);line-height:1.4}
+ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+li{margin:6px 0}
+.amenities{display:grid;gap:16px;grid-template-columns:1fr}
+.strip{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+.strip img{width:100%;height:150px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
 
 @media(min-width:900px){
-
-.grid{
-grid-template-columns:1fr 1fr
+  .grid{grid-template-columns:1fr 1fr}
+  .amenities{grid-template-columns:repeat(3,1fr)}
+  .strip{grid-template-columns:repeat(4,1fr)}
+  .hero img{height:360px}
 }
 
-.amenities{
-grid-template-columns:repeat(3,1fr)
-}
-
-.strip{
-grid-template-columns:repeat(4,1fr)
-}
-
-}
-
+/* CHANGE #2: MOBILE HERO FIX */
 @media(max-width:520px){
+  .addr{display:none}
 
-.addr{display:none}
+  .hero img{height:200px;}
+  .hero .body{padding:14px;}
 
-h1{font-size:34px}
-
+  h1{font-size:30px;}
+  .sub{font-size:16px;}
 }
 </style>
 
 </head>
-
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
-<div class="inner">
-
-<div>
-<div class="brand">Sky Plaza Laundromat</div>
-<div class="addr">8223 Windham St, Garrettsville OH</div>
+  <div class="inner">
+    <div>
+      <div class="brand">Sky Plaza Laundromat</div>
+      <div class="addr">8223 Windham St, Garrettsville OH</div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="tel:+1XXXXXXXXXX">Call</a>
+      <a class="btn" href="sms:+1XXXXXXXXXX">Text</a>
+      <a class="btn" href="https://maps.google.com/?q=Sky+Plaza+Laundromat" target="_blank" rel="noopener">Directions</a>
+      <a class="btn primary" href="dropoff.html">Drop-Off</a>
+    </div>
+  </div>
 </div>
 
-<div class="actions">
-<a class="btn" href="tel:+1XXXXXXXXXX">Call</a>
-<a class="btn" href="sms:+1XXXXXXXXXX">Text</a>
-<a class="btn" href="https://maps.google.com/?q=Sky+Plaza+Laundromat">Directions</a>
-<a class="btn primary" href="#dropoff">Drop-Off</a>
-</div>
-
-</div>
-</div>
-
+<!-- HERO -->
 <section class="wrap">
+  <div class="hero">
+    <img src="sign.jpg" alt="Sky Plaza Laundromat sign">
+    <div class="body">
+      <h1>Sky Plaza Laundromat</h1>
+      <p class="sub">Laundry Done. Zero Stress.</p>
+      <p class="pill">Self-Serve • 24 Hours • Vending</p>
 
-<div class="hero">
-
-<img src="sign.jpg">
-
-<div class="body">
-
-<h1>Sky Plaza Laundromat</h1>
-
-<p class="sub">Laundry Done. Zero Stress.</p>
-
-<p>Self-Serve • 24 Hours • Vending</p>
-
-<a class="btn primary" href="#dropoff">Start Wash-Dry-Fold</a>
-
-<p style="color:var(--muted)">
-Drop off → We wash & fold → We text when it's ready
-</p>
-
-</div>
-
-</div>
-
+      <div style="margin-top:14px;">
+        <a class="btn primary" href="dropoff.html">Start Wash-Dry-Fold</a>
+        <!-- WDF conversion helper line -->
+        <p class="p" style="margin-top:10px;">Drop off → We wash &amp; fold → We text when it’s ready</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- SELF SERVE -->
 <section class="section">
-
-<div class="wrap">
-
-<h2>Self-Serve Laundry</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="white-washers.jpg">
-</div>
-
-<div class="card">
-<div class="body">
-
-<h3>Coin-Op Washers & Dryers</h3>
-
-<p>Open 24 hours</p>
-
-<ul>
-<li>Coin + card payments (PayRange)</li>
-<li>20lb, 30lb, 40lb, 60lb machines</li>
-<li>Plenty of dryers</li>
-</ul>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
+  <div class="wrap">
+    <h2 class="title">Self-Serve Laundry</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="white-washers.jpg" alt="Washer row">
+      </div>
+      <div class="card">
+        <div class="body">
+          <h3 class="h">Coin-Op Washers &amp; Dryers</h3>
+          <p class="p">Open 24 hours.</p>
+          <ul>
+            <li>Coin + card payments (PayRange)</li>
+            <li>20lb, 30lb, 40lb, 60lb machines</li>
+            <li>Plenty of dryers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- DROP OFF (still on homepage for info) -->
 <section class="section" id="dropoff">
-
-<div class="wrap">
-
-<h2>Drop-Off Wash-Dry-Fold</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="body">
-
-<h3>Drop-Off Lockers</h3>
-
-<p><b>$1.50/lb</b> • $25 minimum</p>
-
-<ul>
-<li>Twin / Full / Queen / King sets $35</li>
-<li>Rugs / Ruggables $40+</li>
-<li>Covers by the pound</li>
-</ul>
-
-<a class="btn primary" href="#">Start Wash-Dry-Fold</a>
-
-</div>
-
-</div>
-
-<div class="card">
-<img src="interior.jpg">
-</div>
-
-</div>
-
-</div>
-
+  <div class="wrap">
+    <h2 class="title">Drop-Off Wash-Dry-Fold</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="body">
+          <h3 class="h">Drop-Off Lockers</h3>
+          <p class="p"><strong>$1.50 / lb</strong> • <strong>$25 minimum</strong></p>
+          <ul>
+            <li>Twin / Full / Queen / King sets: <strong>$35</strong></li>
+            <li>Rugs / Ruggables: <strong>$40+</strong></li>
+            <li>Covers: by the pound</li>
+          </ul>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="dropoff.html">Start Wash-Dry-Fold</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="interior.jpg" alt="Inside the laundromat">
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- AMENITIES -->
 <section class="section">
+  <div class="wrap">
+    <h2 class="title">Amenities</h2>
+    <div class="amenities">
+      <div class="card">
+        <img src="vending.jpg" alt="Vending machines">
+        <div class="body">
+          <h3 class="h">Snacks &amp; Supplies</h3>
+          <p class="p">Drinks, snacks &amp; detergent.</p>
+        </div>
+      </div>
 
-<div class="wrap">
+      <div class="card">
+        <img src="change-machine.jpg" alt="Change machine">
+        <div class="body">
+          <h3 class="h">Change Machine</h3>
+          <p class="p">Accepts $1, $5, $10, $20.</p>
+        </div>
+      </div>
 
-<h2>Amenities</h2>
-
-<div class="amenities">
-
-<div class="card">
-<img src="vending.jpg">
-<div class="body">
-<h3>Snacks & Supplies</h3>
-<p>Drinks, snacks & detergent</p>
-</div>
-</div>
-
-<div class="card">
-<img src="change-machine.jpg">
-<div class="body">
-<h3>Change Machine</h3>
-<p>Accepts $1 $5 $10 $20</p>
-</div>
-</div>
-
-<div class="card">
-<img src="large-washers.jpg">
-<div class="body">
-<h3>Large Machines</h3>
-<p>Up to 60lb washers</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
+      <div class="card">
+        <img src="large-washers.jpg" alt="Large capacity washers">
+        <div class="body">
+          <h3 class="h">Large Machines</h3>
+          <p class="p">Up to 60lb washers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-
-<div class="wrap">
-
-<h2>What It Looks Like Inside</h2>
-
-<div class="strip">
-
-<img src="white-washers.jpg">
-<img src="large-washers.jpg">
-<img src="vending.jpg">
-<img src="interior.jpg">
-
-</div>
-
-</div>
-
+<!-- PHOTO STRIP -->
+<section style="padding:26px 0;">
+  <div class="wrap">
+    <h2 class="title">What It Looks Like Inside</h2>
+    <div class="strip">
+      <img src="white-washers.jpg" alt="Washer row">
+      <img src="large-washers.jpg" alt="Large washers">
+      <img src="vending.jpg" alt="Vending machines">
+      <img src="interior.jpg" alt="Interior view">
+    </div>
+  </div>
 </section>
 
 </body>
