@@ -3,430 +3,190 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sky Plaza Laundromat | Wash & Fold Locker Drop-Off</title>
-  <meta name="description" content="Secure 24/7 locker drop-off wash & fold in Garrettsville, Ohio. $1.50/lb • $25 minimum • Text updates • Fast turnaround." />
-
-  <style>
-    :root{
-      --bg0:#071022;
-      --bg1:#0b1220;
-      --card:rgba(15,26,51,.72);
-      --muted:rgba(234,240,255,.72);
-      --text:#eaf0ff;
-      --brand:#2f6df6;
-      --brand2:#4aa3ff;
-      --line:rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1080px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg0);color:var(--text)}
-    a{color:inherit}
-    html{scroll-behavior:smooth}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-
-    /* TOP STRIP (no border like you wanted) */
-    .contact-strip{
-      background: rgba(255,255,255,.06);
-      border-bottom: none;
-    }
-    .contact-strip .inner{
-      display:flex;gap:12px;align-items:center;justify-content:space-between;
-      padding:10px 0;flex-wrap:wrap;
-      color: rgba(234,240,255,.86);
-      font-weight:650;
-      font-size: 13px;
-    }
-    .contact-left{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .contact-right{display:flex;gap:10px;flex-wrap:wrap}
-    .tag{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 10px;border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .mini-btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:8px;
-      padding:9px 11px;border-radius:12px;
-      text-decoration:none;
-      background: rgba(47,109,246,.14);
-      border:1px solid rgba(47,109,246,.28);
-      font-weight:800;
-    }
-    .mini-btn:hover{background: rgba(47,109,246,.22)}
-    .mini-btn.ghost{
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .mini-btn.ghost:hover{background: rgba(255,255,255,.10)}
-
-    /* Sticky nav */
-    .topbar{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter: blur(12px);
-      background: rgba(7,16,34,.62);
-      border-bottom: none;  /* removed border */
-    }
-    .topbar .inner{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:14px;padding:12px 0;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      font-weight:900;letter-spacing:.2px;
-    }
-    .dot{
-      width:11px;height:11px;border-radius:999px;
-      background: linear-gradient(135deg,var(--brand),var(--brand2));
-      box-shadow: 0 0 0 4px rgba(47,109,246,.18);
-    }
-    .nav{
-      display:flex;gap:14px;align-items:center;flex-wrap:wrap;
-      color: rgba(234,240,255,.86);
-      font-weight:700;
-    }
-    .nav a{opacity:.85;text-decoration:none}
-    .nav a:hover{opacity:1;text-decoration:underline}
-    .nav .cta{
-      padding:10px 12px;border-radius:12px;text-decoration:none;
-      background: linear-gradient(135deg,var(--brand),var(--brand2));
-      border:1px solid rgba(80,170,255,.25);
-      box-shadow: 0 12px 28px rgba(47,109,246,.22);
-      opacity:1;
-    }
-    .nav .cta:hover{text-decoration:none;filter:brightness(1.03)}
-
-.hero{
-position:relative;
-min-height:100vh;
-display:flex;
-justify-content:flex-start;
-align-items:flex-start;
-
-padding-left:80px;
-padding-top:120px;
-
-background-image:url('header.png');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-}
-
-.hero .content{
-position:absolute;
-left:80px;
-top:160px;
-
-max-width:520px;
-
-text-align:left;
-
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-
-z-index:2;
-}
-/* headline readability */
-.h1{
-text-shadow:0 3px 12px rgba(0,0,0,0.8);
-}
-    .sub{
-      margin:0 0 18px 0;
-      max-width: 64ch;
-      color: rgba(234,240,255,.86);
-      font-size: 17px;
-      line-height: 1.6;
-      text-shadow: 0 2px 14px rgba(0,0,0,.30);
-    }
-    .trust{
-      display:flex;gap:12px;flex-wrap:wrap;
-      margin: 12px 0 22px 0;
-      color: rgba(234,240,255,.74);
-      font-weight:750;
-      font-size: 14px;
-    }
-    .trust span{
-      padding:8px 10px;border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .btnrow{display:flex;gap:12px;flex-wrap:wrap}
-   .btn{
-display:inline-block;
-padding:12px 22px;
-border-radius:10px;
-font-weight:600;
-text-decoration:none;
-transition:all .25s ease;
-backdrop-filter:blur(6px);
-}
-
-.btn.primary{
-background:linear-gradient(135deg,#3a8aff,#1f5fe0);
-color:white;
-box-shadow:0 6px 18px rgba(47,109,246,.35);
-}
-
-.btn.primary:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 24px rgba(47,109,246,.45);
-}
-
-.btn.ghost{
-background:rgba(255,255,255,.12);
-color:white;
-border:1px solid rgba(255,255,255,.25);
-}
-
-.btn.ghost:hover{
-background:rgba(255,255,255,.20);
-}
-
-    /* Sections */
-    section{padding: 56px 0}
-    .section-title{
-      margin:0 0 10px 0;
-      font-size: 26px;
-      letter-spacing:-.3px;
-      font-weight: 950;
-      text-align:center;
-    }
-    .section-sub{
-      margin:0 auto 26px auto;
-      max-width: 78ch;
-      text-align:center;
-      color: rgba(234,240,255,.74);
-      line-height:1.6;
-    }
-
-    /* Cards */
-    .grid{display:grid;grid-template-columns: repeat(12, 1fr);gap: 14px;}
-    .card{
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .card h3{margin:0 0 8px 0;font-size:18px;font-weight:950}
-    .card p{margin:0;color: rgba(234,240,255,.76);line-height:1.6}
-    .icon{
-      width:38px;height:38px;border-radius:14px;
-      display:grid;place-items:center;
-      background: rgba(47,109,246,.18);
-      border: 1px solid rgba(47,109,246,.32);
-      margin-bottom: 10px;
-      font-size: 18px;
-      font-weight: 950;
-    }
-
-    /* How it works */
-    .how .card{grid-column: span 4}
-    @media (max-width: 920px){ .how .card{grid-column: span 6} }
-    @media (max-width: 620px){ .how .card{grid-column: span 12} }
-
-    /* Form */
-    .formwrap{display:grid;grid-template-columns: 1.1fr .9fr; gap:14px; align-items:start;}
-    .formwrap iframe{
-      width:100%;
-      height: 980px;
-      border:0;
-      border-radius: 14px;
-      background: white;
-    }
-    @media (max-width: 980px){ .formwrap{grid-template-columns: 1fr} }
-
-    /* Photos */
-    .gallery .photo{grid-column: span 4; padding:0; overflow:hidden}
-    .gallery img{width:100%;height:240px;object-fit:cover;display:block}
-    .gallery .caption{padding:12px 14px;color:rgba(234,240,255,.78);font-weight:750}
-    @media (max-width: 920px){ .gallery .photo{grid-column: span 6} }
-    @media (max-width: 620px){ .gallery .photo{grid-column: span 12} .gallery img{height:220px} }
-
-    /* Footer */
-    footer{border-top: 1px solid rgba(255,255,255,.10);padding: 24px 0 40px 0;color: rgba(234,240,255,.70);}
-    .small{font-size:13px;line-height:1.6}
-
-    /* Mobile tweaks */
-    @media (max-width: 768px) {
-      .btnrow{flex-direction:column;align-items:stretch}
-      .btn{width:100%}
-    }
-  </style>
+  <title>Sky Plaza Laundromat</title>
 </head>
 
 <body>
 
- 
-          <span>Sky Plaza Laundromat</span>
-       
-          <a href="#order" class="cta">Start order</a>
-        </nav>
+<style>
+  :root{--max:1100px;--pad:18px;--blue:#0b4aa2;--text:#0f172a;--muted:#475569;--line:#e2e8f0}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .topbar .inner{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px var(--pad);max-width:var(--max);margin:0 auto}
+  .brand{font-weight:800;line-height:1.1}
+  .addr{font-size:13px;color:var(--muted)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:10px;border:1px solid var(--line);text-decoration:none;color:var(--text);font-weight:700;font-size:14px;background:#fff}
+  .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .hero{margin:12px auto 0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .hero img{width:100%;height:320px;object-fit:cover;display:block}
+  .hero .body{padding:18px}
+
+  /* BIGGER TITLE */
+  h1{margin:0;font-size:44px;letter-spacing:-0.02em;line-height:1.05}
+
+  .sub{margin:8px 0 0;font-size:18px;color:var(--muted)}
+  .pill{margin:12px 0 0;font-size:14px;color:var(--muted)}
+  .section{padding:26px 0;border-bottom:1px solid var(--line)}
+  .title{margin:0 0 10px;font-size:22px}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr;align-items:start}
+  .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+  .card img{width:100%;height:260px;object-fit:cover;display:block}
+  .card .body{padding:14px}
+  .h{margin:0;font-size:18px}
+  .p{margin:8px 0 0;color:var(--muted);line-height:1.4}
+  ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+  li{margin:6px 0}
+  .amenities{display:grid;gap:16px;grid-template-columns:1fr}
+  .strip{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+  .strip img{width:100%;height:150px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+  @media (min-width:900px){
+    .grid{grid-template-columns:1fr 1fr}
+    .amenities{grid-template-columns:repeat(3,1fr)}
+    .strip{grid-template-columns:repeat(4,1fr)}
+    .hero img{height:360px}
+  }
+  @media (max-width:520px){
+    .addr{display:none}
+    .btn{padding:10px 10px;font-size:13px}
+    /* mobile title size */
+    h1{font-size:34px}
+    .sub{font-size:16px}
+  }
+</style>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="inner">
+    <div>
+      <div class="brand">Sky Plaza Laundromat</div>
+      <div class="addr">8223 Windham St, Garrettsville OH</div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="tel:+1XXXXXXXXXX">Call</a>
+      <a class="btn" href="sms:+1XXXXXXXXXX">Text</a>
+      <a class="btn" href="https://maps.google.com/?q=Sky+Plaza+Laundromat" target="_blank" rel="noopener">Directions</a>
+      <a class="btn primary" href="#dropoff">Drop-Off</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="wrap">
+  <div class="hero">
+    <img src="assets/photos/sign.jpg" alt="Sky Plaza Laundromat sign">
+    <div class="body">
+      <h1>Sky Plaza Laundromat</h1>
+      <p class="sub">Laundry Done. Zero Stress.</p>
+      <p class="pill">Self-Serve • 24 Hours • Vending</p>
+
+      <div style="margin-top:14px;">
+        <a class="btn primary" href="#dropoff">Start Wash-Dry-Fold</a>
+        <!-- WDF conversion helper line -->
+        <p class="p" style="margin-top:10px;">Drop off → We wash &amp; fold → We text when it’s ready</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- HERO full screen -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="content">
-        <div class="pill">🧺 Wash &amp; Fold • Locker Drop-Off • $1.50/lb • $25 minimum</div>
-        <h1 class="h1">Laundry Done.<br/>Zero Stress.</h1>
-        <p class="sub">
-          Drop your bag in our secure lockers, complete the form, and we’ll wash, dry, and neatly fold your order.
-          We’ll text you updates and pickup info when it’s ready.
-        </p>
-
-        <div class="trust">
-          <span>✅ Secure lockers</span>
-          <span>✅ Text updates</span>
-          <span>✅ Neat folding</span>
-          <span>✅ Fast turnaround</span>
-        </div>
-
-        <div class="btnrow">
-          <a class="btn primary" href="#order">Start Wash &amp; Fold Order</a>
-          <a class="btn ghost" href="tel:+13302388883">Call 330-238-8883</a>
-          <a class="btn ghost" href="sms:+13302388883">Text Us</a>
-        </div>
+<!-- SELF SERVE -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title">Self-Serve Laundry</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/photos/white-washers.jpg" alt="Washer row">
       </div>
-    </div>
-  </header>
-
-  <!-- How it works -->
-  <section id="how" class="how">
-    <div class="wrap">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Three steps:</p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="icon">1</div>
-          <h3>Lock your bags in the locker</h3>
-          <p>Follow the instructions on the door to lock, remember your pin!</p>
-        </div>
-        <div class="card">
-          <div class="icon">2</div>
-          <h3>Fill out the intake form</h3>
-          <p>Enter your contact information, locker number, and any special instructions.</p>
-        </div>
-        <div class="card">
-          <div class="icon">3</div>
-          <h3>We wash, dry &amp; fold</h3>
-          <p>We’ll text you pickup instructions when your order is ready.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ORDER (moved up, right after How it works) -->
-  <section id="order">
-    <div class="wrap">
-      <h2 class="section-title">Start your order</h2>
-      <p class="section-sub">Fill this out, then drop your laundry in a locker.</p>
-
-      <div class="formwrap">
-        <div class="card">
-          <iframe
-            title="Wash, Dry, Fold Locker Check-in"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdh-b12ZRGDx2HVAUbYEsmUxLibouY4t0JjTSokc7BRieKv0w/viewform?embedded=true">
-          </iframe>
-        </div>
-
-        <div class="card">
-          <h3>Before you drop off</h3>
-          <p>Quick checklist so your order goes smoothly:</p>
-          <ul style="color:rgba(234,240,255,.76);line-height:1.75;margin:10px 0 0 18px">
-            <li>Check pockets (keys, pens, coins).</li>
-            <li>Remove valuables and anything non-washable.</li>
-            <li>Separate items that can’t be tumble-dried.</li>
-            <li>Add detergent preferences in the form (fragrance-free, no softener, etc.).</li>
+      <div class="card">
+        <div class="body">
+          <h3 class="h">Coin-Op Washers &amp; Dryers</h3>
+          <p class="p">Open 24 hours.</p>
+          <ul>
+            <li>Coin + card payments (PayRange)</li>
+            <li>20lb, 30lb, 40lb, 60lb machines</li>
+            <li>Plenty of dryers</li>
           </ul>
-
-          <div style="height:14px"></div>
-
-          <h3>Need help?</h3>
-          <p style="color:rgba(234,240,255,.76);line-height:1.6;margin:8px 0 0 0;">
-            Call or text: <b>330-238-8883</b>
-          </p>
-
-          <div style="height:14px"></div>
-
-          <h3>Pricing</h3>
-          <p style="color:rgba(234,240,255,.76);line-height:1.6;margin:8px 0 0 0;">
-            <b>$1.50 / lb</b><br/>
-            <b>$25 minimum order</b>
-          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  </section>
-
-  <!-- Reviews -->
-  <section id="reviews">
-    <div class="wrap">
-      <h2 class="section-title">Customer reviews</h2>
-      <p class="section-sub">See what customers are saying about Sky Plaza Laundromat.</p>
-
-      <div style="text-align:center">
-        <a class="btn primary" target="_blank" rel="noopener"
-           href="https://www.google.com/search?q=Sky+Plaza+Laundromat+Garrettsville+Ohio+reviews">
-          Read Reviews
-        </a>
-        <a class="btn ghost" target="_blank" rel="noopener"
-           href="https://g.page/r/CaebglaDbS5TEAI/review">
-          Leave a Review
-        </a>
+<!-- DROP OFF -->
+<section class="section" id="dropoff">
+  <div class="wrap">
+    <h2 class="title">Drop-Off Wash-Dry-Fold</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="body">
+          <h3 class="h">Drop-Off Lockers</h3>
+          <p class="p"><strong>$1.50 / lb</strong> • <strong>$25 minimum</strong></p>
+          <ul>
+            <li>Twin / Full / Queen / King sets: <strong>$35</strong></li>
+            <li>Rugs / Ruggables: <strong>$40+</strong></li>
+            <li>Covers: by the pound</li>
+          </ul>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="#dropoff-form">Start Wash-Dry-Fold</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/photos/interior-wide.jpg" alt="Inside the laundromat">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Map -->
-  <section id="find">
-    <div class="wrap">
-      <h2 class="section-title">Find us</h2>
-      <p class="section-sub">Sky Plaza Laundromat • Garrettsville, Ohio</p>
+<!-- AMENITIES -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title">Amenities</h2>
+    <div class="amenities">
+      <div class="card">
+        <img src="assets/photos/vending.jpg" alt="Vending machines">
+        <div class="body">
+          <h3 class="h">Snacks &amp; Supplies</h3>
+          <p class="p">Drinks, snacks &amp; detergent.</p>
+        </div>
+      </div>
 
       <div class="card">
-        <iframe
-          src="https://www.google.com/maps?q=Sky+Plaza+Laundromat+Garrettsville+Ohio&output=embed"
-          width="100%"
-          height="350"
-          style="border:0; border-radius:14px;"
-          loading="lazy"
-          allowfullscreen
-          title="Google Map - Sky Plaza Laundromat">
-        </iframe>
+        <img src="assets/photos/change-machine.jpg" alt="Change machine">
+        <div class="body">
+          <h3 class="h">Change Machine</h3>
+          <p class="p">Accepts $1, $5, $10, $20.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/photos/stainless-washers.jpg" alt="Large capacity washers">
+        <div class="body">
+          <h3 class="h">Large Machines</h3>
+          <p class="p">Up to 60lb washers.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="wrap">
-      <div class="small">
-        © <span id="y"></span> Sky Plaza Laundromat • Call/Text: 330-238-8883
-      </div>
+<!-- PHOTO STRIP -->
+<section style="padding:26px 0;">
+  <div class="wrap">
+    <h2 class="title">What It Looks Like Inside</h2>
+    <div class="strip">
+      <img src="assets/photos/white-washers.jpg" alt="Washer row">
+      <img src="assets/photos/stainless-washers.jpg" alt="Large washers">
+      <img src="assets/photos/vending.jpg" alt="Vending machines">
+      <img src="assets/photos/interior-wide.jpg" alt="Interior view">
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<!-- Drop-off form anchor -->
+<div id="dropoff-form"></div>
+
 </body>
 </html>
