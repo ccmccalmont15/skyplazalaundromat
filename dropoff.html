@@ -3,145 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Wash Dry Fold | Sky Plaza Laundromat</title>
 
 <style>
-
 :root{
---max:900px;
---blue:#0b4aa2;
---text:#0f172a;
---muted:#475569;
---line:#e2e8f0;
---pad:18px;
+  --max:900px;
+  --blue:#0b4aa2;
+  --text:#0f172a;
+  --muted:#475569;
+  --line:#e2e8f0;
+  --pad:18px;
 }
 
+*{box-sizing:border-box}
+
 body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-color:var(--text);
-background:white;
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
 }
 
 .container{
-max-width:var(--max);
-margin:auto;
-padding:40px var(--pad);
+  max-width:var(--max);
+  margin:auto;
+  padding:40px var(--pad);
 }
 
 .top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
 }
 
 .brand{
-font-weight:800;
-font-size:20px;
+  font-weight:800;
+  font-size:20px;
 }
 
 .button{
-display:inline-block;
-padding:12px 18px;
-background:var(--blue);
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:700;
-margin-top:20px;
+  display:inline-block;
+  padding:12px 18px;
+  background:var(--blue);
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:700;
+  margin-top:20px;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
 }
 
 .button.secondary{
-background:white;
-color:var(--text);
-border:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+  border:1px solid var(--line);
 }
 
 .card{
-border:1px solid var(--line);
-border-radius:16px;
-padding:24px;
-margin-top:20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px;
+  margin-top:20px;
 }
 
 h1{
-font-size:40px;
-margin-bottom:10px;
+  font-size:40px;
+  margin:0 0 10px;
+}
+
+h2{
+  font-size:24px;
+  margin:0 0 12px;
 }
 
 .step{
-margin:18px 0;
-font-size:18px;
+  margin:18px 0;
+  font-size:18px;
 }
 
 .price{
-font-size:22px;
-font-weight:700;
-margin-top:20px;
+  font-size:22px;
+  font-weight:700;
+  margin-top:20px;
 }
 
 .note{
-margin-top:10px;
-color:var(--muted);
+  margin-top:10px;
+  color:var(--muted);
+  line-height:1.5;
 }
 
-</style>
+ul{
+  margin:10px 0 0;
+  padding-left:20px;
+  color:var(--muted);
+  line-height:1.5;
+}
 
+li{
+  margin:8px 0;
+}
+
+.agree-box{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+
+.agree-label{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.agree-label input{
+  margin-top:3px;
+}
+
+@media(max-width:640px){
+  .container{padding:24px var(--pad)}
+  .top{align-items:flex-start;flex-direction:column}
+  h1{font-size:32px}
+  .step{font-size:16px}
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="top">
-<div class="brand">Sky Plaza Laundromat</div>
+  <div class="top">
+    <div class="brand">Sky Plaza Laundromat</div>
+    <a class="button secondary" href="index.html">← Back to Home</a>
+  </div>
 
-<a class="button secondary" href="index.html">
-← Back to Home
-</a>
+  <h1>Wash • Dry • Fold</h1>
+
+  <p class="note">
+    Drop off → We wash &amp; fold → We text when it's ready
+  </p>
+
+  <div class="card">
+
+    <div class="step">1️⃣ Fill out the order form</div>
+    <div class="step">2️⃣ Drop your laundry in the lockers at Sky Plaza Laundromat</div>
+    <div class="step">3️⃣ We wash, dry, and neatly fold your clothes</div>
+    <div class="step">4️⃣ We text you when your order is ready</div>
+
+    <div class="price">$1.50 per pound • $25 minimum</div>
+
+    <div style="margin-top:28px;">
+      <h2>Wash-Dry-Fold Terms</h2>
+      <ul>
+        <li>$1.50 per pound with a $25 minimum order.</li>
+        <li>Please check all pockets before drop-off. We are not responsible for items left in clothing.</li>
+        <li>We do our best to return personal items found, but cannot guarantee recovery of missing items.</li>
+        <li>Items are washed and dried with reasonable care using standard laundry methods.</li>
+        <li>Normal laundering may cause wear, fading, shrinkage, or damage to weak, delicate, or improperly labeled items.</li>
+        <li>Items needing special care must be clearly labeled before drop-off.</li>
+        <li>Comforters, rugs, bulky items, and heavily soiled items may have separate pricing or additional charges.</li>
+        <li>Orders left unclaimed for 30 days may be donated or disposed of.</li>
+      </ul>
+    </div>
+
+    <div class="agree-box">
+      <label class="agree-label">
+        <input type="checkbox" id="agree">
+        <span>I have read and agree to the Wash-Dry-Fold Terms of Service.</span>
+      </label>
+
+      <a
+        id="orderBtn"
+        class="button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdh-b12ZRGDx2HVAUbYEsmUxLibouY4t0JjTSokc7BRieKv0w/viewform?usp=dialog"
+        target="_blank"
+      >
+        Finalize Wash-Dry-Fold Order
+      </a>
+    </div>
+
+  </div>
+
 </div>
 
-<h1>Wash • Dry • Fold</h1>
+<script>
+const agree = document.getElementById("agree");
+const btn = document.getElementById("orderBtn");
 
-<p class="note">
-Drop off → We wash & fold → We text when it's ready
-</p>
-
-<div class="card">
-
-<div class="step">
-1️⃣ Fill out the order form
-</div>
-
-<div class="step">
-2️⃣ Drop your laundry in the lockers at Sky Plaza Laundromat
-</div>
-
-<div class="step">
-3️⃣ We wash, dry, and neatly fold your clothes
-</div>
-
-<div class="step">
-4️⃣ We text you when your order is ready
-</div>
-
-<div class="price">
-$1.50 per pound • $25 minimum
-</div>
-
-<a class="button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSdh-b12ZRGDx2HVAUbYEsmUxLibouY4t0JjTSokc7BRieKv0w/viewform?usp=dialog"
-target="_blank">
-
-Start Your Order
-
-</a>
-
-</div>
-
-</div>
+btn.addEventListener("click", function(e){
+  if(!agree.checked){
+    e.preventDefault();
+    alert("Please accept the Wash-Dry-Fold Terms of Service before continuing.");
+  }
+});
+</script>
 
 </body>
 </html>
